@@ -16,12 +16,12 @@ class Game():
     def game_initialize(self):
         pg.init()
         # ===музыка===
-        pg.mixer.music.load('music.mp3')
+        pg.mixer.music.load('ref/music/music.mp3')
         pg.mixer.music.set_volume(0.5)
         pg.mixer.music.play(-1)
         # ==
-        self.kill = pg.mixer.Sound('metronome01.ogg')
-        self.upgrade = pg.mixer.Sound('metronome02.ogg')
+        self.kill = pg.mixer.Sound('ref/sound/metronome01.ogg')
+        self.upgrade = pg.mixer.Sound('ref/sound/metronome02.ogg')
         # ============
         camera = pg.display.set_mode((self.camera_width, self.camera_height))
         pg.display.set_caption(self.caption)
@@ -50,9 +50,9 @@ class Game():
 
 
         # ===изображения===
-        self.background = pg.image.load('timebackground.png').convert()
-        tileset = pg.image.load('tileset.png').convert_alpha()
-        self.sprite = pg.image.load('enimes.png')
+        self.background = pg.image.load('ref/images/timebackground.png').convert()
+        tileset = pg.image.load('ref/images/tileset.png').convert_alpha()
+        self.sprite = pg.image.load('ref/images/enimes.png')
         # =====
         self.enime_stay = self.sprite.subsurface((0, 0, 16, 16))
         self.enime_stay = pg.transform.scale(self.enime_stay,
@@ -453,4 +453,3 @@ class Game():
 if __name__ == '__main__':
     new_game = Game()
     new_game.game_initialize()
-
